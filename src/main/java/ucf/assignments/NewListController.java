@@ -46,6 +46,7 @@ public class NewListController {
     @FXML
     ListDatabase database = new ListDatabase(allList);
 
+    // take user back to home screen
     public void backToHome(ActionEvent actionEvent) {
         // declare parent variable
         // set FXMLLoader to load for "ToDoListApp.fxml"
@@ -66,9 +67,9 @@ public class NewListController {
         // use item.setDescription(setEventDescription.getText()) to set description text
         // use item.setDueDate(setEventDueDate.getValue()) to set due date
 
-        // call addEventToListMethod
+        // call addEventToListMethod to add the event to the listView
 
-        // call refreshEvent() method to reset textfields
+        // call refreshEvent() method to reset textfields so user can enter any new events
 
     }
 

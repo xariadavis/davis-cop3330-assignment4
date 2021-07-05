@@ -18,6 +18,12 @@ class NewListControllerTest {
     @Test
     // clears TextFields after event is added
     void refreshEvent_doFieldsClear() {
+        // test if method nullifies what its supposed to
+        // set actual values for textfeild and datepicker  -- use these to test
+        // call the method to nullify to actual values
+        // set expected values to null
+        // assertEquals to see if method nullified values
+
         // declare actual textfield - set value to "Pick up laundry"
         // declare actual datepicker - set value to "2021-07-09"
         // call refreshEvent
@@ -29,6 +35,12 @@ class NewListControllerTest {
     @Test
     // clears TextFields after event is added
     void refreshTitle_doFieldsClear() {
+        // test if method nullifies what its supposed to
+        // set actual values for textfeild and arrayList  -- use these to test
+        // call the method to nullify to actual values
+        // set expected values to null
+        // assertEquals to see if method nullified values
+
         // declare actual textfield - set value to "OOP Assignment 4"
         // declare arraylist actual list
         // add items to list
@@ -44,21 +56,31 @@ class NewListControllerTest {
 
     @Test
     void addEventToList_areEventsAddedToList() {
+        // test to see whether or not an event was actually added to list
+
         // call addEventToList("test description", 1999-01-01);
         // use item variable to get the values for the event declared above
-        // user assertEquals to assert the values are equal
+        // use assertEquals to assert the values are equal
     }
 
     @Test
     void addListToDatabase_areTheTitlesEqual() {
+        // test if the method adds/saves title correctly
+
         // call addListToDatabase("Test", actualList)
-        // String database.getTitle
-        // Expected String = Test
+        // set actual string to database.getTitle
+        // set expected String = "Test"
         // assertEquals (actual = expected)
     }
 
     @Test
     void addListToDatabase_areTheListsEqual() {
+        // test if the method adds/saves title correctly
+        // call method passing in ("Test title", actualList (as declared above)) as a test list
+        // get the list we just saved using the method and set it to actual value
+        // set the actualList to the expected values
+        // assertArrayEquals for the actual and expected list
+
         // call addListToDatabase("Test", actualList)
         // List database.getList
         // Expected list = item1, item2

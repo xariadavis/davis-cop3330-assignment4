@@ -16,12 +16,14 @@ import java.io.IOException;
 
 public class ToDoListAppController {
 
-    // on click button will open file explorer -- DONE
+    // on click button will open file explorer
     public void LoadListFromStorageClicked(ActionEvent actionEvent) {
         // surround with try catch because will need and IO Exception
             // use Runtime library and command it to "explorer.exe /select, path"
+            // open it in the viewList FXML as if it were just a list in the database
     }
 
+    // button clicked -- take to another page where the list is actually created
     public void createNewListClicked(ActionEvent actionEvent) {
         // call for new scene that displays empty new list
 
@@ -35,7 +37,7 @@ public class ToDoListAppController {
         // make the Stage variable show the scene
     }
 
-    // call for scene that displays all existing lists in database -- DONE
+    // button clicked -- call for scene that displays all existing lists in database
     public void existingListsButtonClicked(ActionEvent actionEvent) {
 
         // declare parent variable

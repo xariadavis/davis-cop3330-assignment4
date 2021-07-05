@@ -25,14 +25,14 @@ public class ExistingToDoListsController {
 
     // req #14
     public void initialize() {
-        // call populateExistingList method
+        // call populateExistingList method to populate list with existing lists
     }
 
     // on click, change scene back to the home screen -- DONE
     public void backButtonClicked(ActionEvent actionEvent) {
         // declare parent variable
         // set FXMLLoader to load for "ToDoListApp.fxml"
-        // needs and IO exception so surround with a try/catch
+        // needs an IO exception so surround with a try/catch
 
         // create a new Scene for it -- like homeScreen or something
         // declare a Stage variable and = it the window
@@ -93,7 +93,7 @@ public class ExistingToDoListsController {
 
     public void removeListFromDatabase(String title, ArrayList<Item> theList) {
         // call ListDatabase instance variable -- database for example
-        // call database.remove method for the list that was clicked
+        // call database.remove method for the list that was clicked to remove it
     }
 
     public void saveSingleListToTXT() {

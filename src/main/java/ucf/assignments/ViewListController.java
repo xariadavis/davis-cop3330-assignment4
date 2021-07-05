@@ -44,6 +44,7 @@ public class ViewListController {
         // fill with list.getTitle() method
     }
 
+    // button clicked -- takes user back to home screen
     public void backToHome(ActionEvent actionEvent) {
         // on click, change scene back to the home screen -- DONE
         // declare parent variable
@@ -62,7 +63,7 @@ public class ViewListController {
         // call changeListTitle method
     }
 
-    // on click open a new window to add item to list? probably take care of it on saturday
+    // button clicked -- opens a window (AddItemWindow) where user enters info necessary to add item to the list
     // req #9
     @FXML
     private void addItemToExistingList() {
@@ -86,6 +87,7 @@ public class ViewListController {
         // call filterChoiceBoxSelectionStatus method
     }
 
+    // button clicked -- opens a window (EditItemWindow) where user enters new info
     public void editItemButtonClicked(ActionEvent actionEvent) {
         // open AddItemWindow.fxml
         // wrap in try/catch because of IO exception
@@ -98,12 +100,12 @@ public class ViewListController {
 
     public void removeItemButtonClicked(ActionEvent actionEvent) {
         // getName and dueDate from the item / just the item itself that was clicked in listView
-        // call removeItemFromList(item) method
+        // call removeItemFromList(item) method to remove the item from the list
     }
 
     public void markAsComplete(ActionEvent actionEvent) {
-        // call isComplete() method
-        // call setListColorToCompleted(true)
+        // call isComplete() method to mark it as complete when coding
+        // call setListColorToCompleted(true) to change the background color to green so the user knows it is complete
     }
 
     // ----------------
@@ -111,17 +113,16 @@ public class ViewListController {
     // method for changeTitle
     // req #8
     public void changeListTitle (String newTitle) {
-        // using variable for list, call list.setTitle
-        // use the newTitle to set the new title name
-        // action event -- enter button clicked? Potentially change to save button
+        // using variable for list, call list.setTitle to set the title (using setter)
+        // use the newTitle to set the new title name on the page (using getter)
+        // action event -- enter button clicked to save new title. Potentially change to save button
     }
 
     // on click of specific to do list from list
-    // on click of remove toggle
     // *tested functionality in another method -- may remove this one and redirect to that one
     // req #7
     public void removeExistingList() {
-        // use database and allLists.remove specific lists
+        // use database and allLists.remove specific list
     }
 
     // if user marks item complete the set bool to true
@@ -130,6 +131,7 @@ public class ViewListController {
     }
 
     // if item is complete set background color to green
+    // this is how we will differentiate whether an item is completed or not -- may change color later to fit the theme
     private void setListColorToCompleted(boolean itemStatus) {
         // if item status is true
             // set background color of list item to green
@@ -142,14 +144,14 @@ public class ViewListController {
     public void filterListItems() {
         // when user makes selection
         // if click on string "Completed"
-            // only display items with itemStatus = true
+            // only display items with itemStatus = true (marked as complete)
         // if click on string "Incomplete"
-            // only display items with itemStatus = false
+            // only display items with itemStatus = false (marked as incomplete)
         // else
             // display all and forgo using item status
     }
 
     public void removeItemFromList(Item item){
-        // call class variable for List and .remove(itemClicked)
+        // call class variable for List and .remove(itemClicked) to remove it from the list
     }
 }
