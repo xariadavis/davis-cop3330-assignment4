@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.NewListController">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="750.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../images/download.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="172.0" fitWidth="521.0" layoutX="-58.0" layoutY="-83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/createNewLists.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="673.0" layoutY="456.0" mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: #ffffff;" text="Back">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="setTitleName" layoutX="200.0" layoutY="86.0" prefHeight="23.0" prefWidth="327.0" promptText="Title your list..." style="-fx-background-color: #2e3442; -fx-text-fill: white;">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font></TextField>
+      <ListView fx:id="eventList" blendMode="MULTIPLY" layoutX="98.0" layoutY="162.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="530.0" style="-fx-text-fill: white; -fx-border-color: #e65c7b; -fx-border-radius: 15; -fx-background-radius: 15; -fx-border-width: 3;" />
+      <TextField fx:id="setEventDescription" layoutX="126.0" layoutY="121.0" prefHeight="26.0" prefWidth="229.0" promptText="Event description..." style="-fx-background-color: #2e3442; -fx-text-fill: white;">
+         <font>
+            <Font name="Lucida Fax Regular" size="12.0" />
+         </font></TextField>
+      <Button fx:id="addButton" layoutX="519.0" layoutY="118.0" mnemonicParsing="false" onAction="#addEventButton" style="-fx-background-color: #2e3442; -fx-border-color: #e65c7b; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Add Event" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="addListButton" layoutX="343.0" layoutY="459.0" mnemonicParsing="false" onAction="#addListButton" style="-fx-background-color: #2e3442; -fx-border-color: #e65c7b; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Add List" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="setEventDueDate" editable="false" layoutX="387.0" layoutY="121.0" prefHeight="26.0" prefWidth="112.0" promptText="Date due" style="-fx-background-color: #2e3442; -fx-text-fill: white;" />
+      <Separator layoutX="126.0" layoutY="146.0" prefHeight="3.0" prefWidth="229.0" />
+      <Separator layoutX="200.0" layoutY="111.0" prefHeight="3.0" prefWidth="327.0" />
+   </children>
+</AnchorPane>

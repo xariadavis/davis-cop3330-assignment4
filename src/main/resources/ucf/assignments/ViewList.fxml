@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ViewListController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="750.0" layoutY="-5.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../images/download.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="682.0" layoutY="456.0" mnemonicParsing="false" onAction="#backToHome" style="-fx-background-color: #ffffff;" text="Back">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <ListView fx:id="existingListView" blendMode="MULTIPLY" layoutX="81.0" layoutY="132.0" prefHeight="303.0" prefWidth="581.0" style="-fx-border-color: #e65c7b; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 3;" />
+      <TextField fx:id="listTitle" layoutX="299.0" layoutY="88.0" onAction="#fillListTitle" onInputMethodTextChanged="#changeTitle" promptText="Title..." />
+      <ChoiceBox fx:id="filterChoiceBox" blendMode="LIGHTEN" layoutX="642.0" layoutY="29.0" onMouseClicked="#filterChoiceBoxSelection" prefHeight="2.0" prefWidth="81.0" style="-fx-background-color: #2e3442; -fx-border-color: #e65c7b; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 300; -fx-focus-color: midnightblue;" />
+      <Button fx:id="addItemButton" layoutX="146.0" layoutY="449.0" mnemonicParsing="false" onAction="#addItemToExistingList" style="-fx-border-color: #e65c7b; -fx-background-color: #2e3442; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Add item" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="editItemButton" layoutX="382.0" layoutY="449.0" mnemonicParsing="false" onAction="#editItemButtonClicked" style="-fx-border-color: #e65c7b; -fx-background-color: #2e3442; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Edit item" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="removeItemButton" layoutX="252.0" layoutY="449.0" mnemonicParsing="false" onAction="#removeItemButtonClicked" style="-fx-background-color: #2e3442; -fx-border-color: #e65c7b; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Remove item" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="markAsCompletedButton" layoutX="493.0" layoutY="449.0" mnemonicParsing="false" onAction="#markAsComplete" style="-fx-background-color: #2e3442; -fx-border-color: #e65c7b; -fx-background-size: 1200 900; -fx-background-radius: 30; -fx-border-radius: 30;" text="Mark as complete" textFill="WHITE">
+         <font>
+            <Font name="Lucida Fax Regular" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="183.0" fitWidth="494.0" layoutX="-43.0" layoutY="-79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../images/viewList.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

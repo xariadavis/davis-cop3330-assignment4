@@ -1,0 +1,138 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AddItemWindowController() {
+    + saveDescriptionAndDate(ActionEvent actionEvent)
+    + saveInfo(String description, LocalDate dueDate)
+
+}
+
+class EditListWindowController() {
+    + saveDescriptionAndDate(ActionEvent actionEvent)
+    + saveInfo()
+}
+
+class ExistingToDoListsController() {
+    - ArrayList<List> allLists = new ArrayList<List>();
+    - ListDatabase database = new ListDatabase(allLists);
+
+    + initialize()
+    + backButtonClicked(ActionEvent actionEvent)
+    + populateExistingList()
+    + addNewList(ActionEvent actionEvent)
+    + removeList(ActionEvent actionEvent)
+    + saveList(ActionEvent actionEvent)
+    + saveAllLists(ActionEvent actionEvent)
+    + addNewListToDatabase()
+    + removeListFromDatabase(String title, ArrayList<Item> theList)
+    + saveSingleListToTXT()
+    + saveAllToDoListsToTXT()
+}
+
+class Item() {
+    - String description
+    - LocalDate dueDate
+    - Boolean itemStatus
+
+    + Item(String description, LocalDate dueDate)
+    + setDescription(String description)
+    + String getDescription()
+    + setDueDate(LocalDate dueDate)
+    + LocalDate getDueDate()
+    + setItemStatus(Boolean itemStatus)
+    + Boolean getItemStatus()
+    + String toString()
+}
+
+class List() {
+    - String title
+    - ArrayList<Item> theList = new ArrayList<Item>()
+
+    + List(String title, ArrayList<Item> theList)
+    + add(String description, LocalDate dueDate)
+    + remove(Item item)
+    + ArrayList<Item> getList()
+    + setTitle(String title)
+    + String getTitle()
+
+}
+
+class ListDatabase() {
+    - ArrayList<List> allLists
+
+    + ListDatabase(ArrayList<List> allLists)
+    + add(String title, ArrayList<Item> theList)
+    + remove(String title, ArrayList<Item> theList)
+    + ArrayList<List> getAllLists()
+}
+
+class NewListController() {
+    - ListView<Item> eventList
+    - TextField setTitleName
+    - TextField setEventDescription
+    - DatePicker setEventDueDate
+    - String description
+    - LocalDate dueDate
+    - Item item = new Item(description, dueDate)
+    - String title
+    - ArrayList<Item> theList = new ArrayList<Item>()
+    - List list = new List(title, theList)
+    - ArrayList<List> allList = new ArrayList<List>()
+    - ListDatabase database = new ListDatabase(allList)
+
+    + backToHome(ActionEvent actionEvent)
+    + addEventButton(ActionEvent actionEvent)
+    + addListButton(ActionEvent actionEvent)
+    + refreshEvent()
+    + refreshTitle()
+    + addEventToList(TextField setEventDescription, DatePicker setEventDueDate)
+    + addListToDatabase(String title, ArrayList<List> theList)
+}
+
+class ToDoListApp() {
+    + main(String[] args)
+    + start(Stage primaryStage)
+}
+
+class ToDoListAppController() {
+    + LoadListFromStorageClicked(ActionEvent actionEvent)
+    + createNewListClicked(ActionEvent actionEvent)
+    + existingListsButtonClicked(ActionEvent actionEvent)
+}
+
+class ViewListController() {
+    - private ChoiceBox filterChoiceBox
+    - ObservableList<String> filterChoiceBoxList
+    - ObservableList<String> editItemsChoiceBoxList
+
+    + initialize()
+    + fillListTitle(ActionEvent actionEvent)
+    + backToHome(ActionEvent actionEvent)
+    + changeTitle(InputMethodEvent inputMethodEvent)
+    + addItemToExistingList()
+    + setFilterChoiceBox()
+    + filterChoiceBoxSelection(MouseEvent mouseEvent)
+    + editItemButtonClicked(ActionEvent actionEvent)
+    + removeItemButtonClicked(ActionEvent actionEvent)
+    + markAsComplete(ActionEvent actionEvent)
+    + changeListTitle (String newTitle)
+    + removeExistingList()
+    + boolean ItemComplete()
+    + setListColorToCompleted(boolean itemStatus)
+    + filterListItems()
+    + removeItemFromList(Item item)
+}
+
+javafx.Application <|-- ToDoListApp
+ToDoListApp - ToDoListAppController
+ToDoListAppController - NewListController
+ToDoListAppController - ExistingToDoListsController
+Item - AddItemWindowController
+Item - EditListWindowController
+List - NewListController
+ListDatabase - NewListController
+ListDatabase - ExistingToDoListsController
+ListDatabase - ViewListController
+
+
+@enduml
